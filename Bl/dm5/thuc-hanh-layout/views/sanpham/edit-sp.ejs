@@ -1,0 +1,20 @@
+<%- include('../inc/top.ejs')  %>
+
+<h1>Đây là trang edit</h1>
+<%= msg  %>
+<form action="" method="post">
+    <select class="form-select" name="theloai">
+    <% listTL.forEach( row =>{  
+        let selected = '';
+        if(String(row._id) == String(objSP.id_theloai))
+        selected= '  selected';
+        %>
+        <option <%= selected%> value="<%=row._id %>"><%=row.name %></option> 
+    <% }); %>
+    </select>
+    <input type="text" value="<%= objSP.name %>" name="name" placeholder="tên sp"><br>
+    <input type="number" value="<%=objSP.price %>" name="price" placeholder="số tiền"><br>
+    <textarea name="description" cols="30" rows="10"><%= objSP.description %></textarea><br>
+    <button type="submit">save</button>
+</form>
+<%- include('../inc/bottom.ejs')  %>

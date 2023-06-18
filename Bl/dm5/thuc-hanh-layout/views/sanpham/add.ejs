@@ -1,0 +1,16 @@
+<%- include('../inc/top.ejs')  %>
+
+<h1>Đây là trang add</h1>
+<%= msg  %>
+<form action="" method="post">
+    <select class="form-select" name="theloai">
+    <% listTL.forEach( row =>{   %>
+        <option value="<%=row._id %>"><%=row.name %></option> 
+    <% }); %>
+    </select>
+    <input type="text" name="name" placeholder="tên sp"><br>
+    <input type="number" name="price" placeholder="số tiền"><br>
+    <textarea name="description" cols="30" rows="10"></textarea><br>
+    <button type="submit">save</button>
+</form>
+<%- include('../inc/bottom.ejs')  %>

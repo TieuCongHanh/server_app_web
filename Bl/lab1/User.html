@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/bootstrap-5.2.3-dist/css/bootstrap.min.css">
+    <style>
+        .btn {
+            margin: auto;
+            display: block;
+            width: 100px;
+        }
+
+        .modal-title {
+            margin: auto;
+            display: block;
+        }
+
+
+        .input-group-text {
+            width: 100px;
+            margin: auto;
+            display: block;
+        }
+
+        .form-check-inline {
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            display: block;
+        }
+
+        .fullhang {
+            display: flex;
+        }
+
+        .checkbox {
+            display: flex;
+            margin-left: 50px;
+        }
+
+        .a1 {
+            margin-left: 20px;
+        }
+
+        .form-inline {
+            display: flex;
+        }
+
+        .nav-link {
+            color: black;
+        }
+
+        .nav-link:hover {
+            color: deepskyblue;
+            background-color: bisque;
+        }
+
+        .h3 {
+            text-align: center;
+            font-size: 80px;
+        }
+
+        .h5 {
+            text-align: center;
+            font-size: 30px;
+            margin-top: 50px;
+            margin-bottom: 10px;
+        }
+
+        .text-center {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body class="container">
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+            <a class="nav-link" href="#">Dashboard </a>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Users
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">User</a></li>
+                <li><a class="dropdown-item" href="#">Group</a></li>
+                <li><a class="dropdown-item" href="#">Role</a></li>
+            </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Products
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Product</a></li>
+                <li><a class="dropdown-item" href="#">Category</a></li>
+                <li><a class="dropdown-item" href="#">Tag</a></li>
+            </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Settings
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Banner</a></li>
+                <li><a class="dropdown-item" href="#">Info</a></li>
+            </ul>
+        </li>
+
+    </ul>
+
+    <h3 class="h3">user</h3>
+
+    <nav class="navbar navbar-light bg-light  col-12 col-sm-12 col-md-12">
+        <form class=" form-inline col-12 col-sm-12 col-md-12">
+
+            <div class=" col-6 col-sm-5 col-md-5">
+                <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+            </div>
+            <div class="col-3 col-sm-3 col-md-1">
+                <button class="btn btn-outline-success " type="submit">Search</button>
+            </div>
+            <!-- Button trigger modal -->
+            <div class="col-3 col-sm-3 col-md-1" style="margin-left: auto;">
+                <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Add User
+                </button>
+            </div>
+        </form>
+
+    </nav>
+    <h5 class="h5">Thông tin người dùng</h5>
+
+    <table class="table table-bordered col">
+        <thead  style="width: auto;">
+            <tr >
+                <th scope="col">ID</th>
+                <th scope="col">Fullname</th>
+                <th scope="col">Username</th>
+                <th scope="col">Email</th>
+                <th scope="col">Group</th>
+                <th scope="col">Status</th>
+            </tr>
+        </thead>
+        <tbody style="width: auto;">
+            <tr>
+                <th scope="row">1</th>
+                <td>Tiêu Công Hạnh</td>
+                <td>Hạnh</td>
+                <td>tieuconghanh34@gmail.com</td>
+                <td>MOBILE</td>
+                <td>Thiếu tiền</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Nguyễn Đức Hùng</td>
+                <td>Hùng</td>
+                <td>nguyenduchung34@gmail.com</td>
+                <td>Graphics</td>
+                <td>Thiếu nhà</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Bùi Văn Ánh</td>
+                <td>Ánh</td>
+                <td>buivananh34@gmail.com</td>
+                <td>WEB</td>
+                <td>Thiếu người eo</td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td>Bùi Văn Ánh</td>
+                <td>Ánh</td>
+                <td>buivananh34@gmail.com</td>
+                <td>WEB</td>
+                <td>Thiếu người eo</td>
+            </tr>
+            <tr>
+                <th scope="row">5</th>
+                <td>Bùi Văn Ánh</td>
+                <td>Ánh</td>
+                <td>buivananh34@gmail.com</td>
+                <td>WEB</td>
+                <td>Thiếu người eo</td>
+            </tr>
+            <tr>
+                <th scope="row">6</th>
+                <td>Bùi Văn Ánh</td>
+                <td>Ánh</td>
+                <td>buivananh34@gmail.com</td>
+                <td>WEB</td>
+                <td>Thiếu người eo</td>
+            </tr>
+            <tr>
+                <th scope="row">7</th>
+                <td>Bùi Văn Ánh</td>
+                <td>Ánh</td>
+                <td>buivananh34@gmail.com</td>
+                <td>WEB</td>
+                <td>Thiếu người eo</td>
+            </tr>
+        </tbody>
+      </table>
+
+    <!-- thông tin thông số của trang -->
+    <div class="row" style="display: flex;">
+        <div class="col-12 col-sm-12 col-md-6">
+            <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Đang xem 1 đến 10
+                trong tổng số 7 mục</div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 dataTables_pager" style="display: flex;">
+            <div class="dataTables_length col-8 col-sm-9 col-md-6" id="DataTables_Table_0_length">
+                <label style="display: flex;">Xem <select style="width: 40px;" name="DataTables_Table_0_length"
+                        aria-controls="DataTables_Table_0"
+                        class="custom-select custom-select-sm form-control form-control-sm">
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                    </select> mục</label>
+            </div>
+            <div class="dataTables_paginate paging_simple_numbers" style="margin-left: auto;"
+                id="DataTables_Table_0_paginate">
+                <ul class="pagination">
+                    <li class="paginate_button page-item previous disabled" id="DataTables_Table_0_previous"><a href="#"
+                            aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" class="page-link">Trước</a>
+                    </li>
+                    <li class="paginate_button page-item active"><a href="#" aria-controls="DataTables_Table_0"
+                            data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
+                    <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0"
+                            data-dt-idx="2" tabindex="0" class="page-link">2</a></li>
+                    <li class="paginate_button page-item next" id="DataTables_Table_0_next"><a href="#"
+                            aria-controls="DataTables_Table_0" data-dt-idx="3" tabindex="0" class="page-link">Sau</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- hết  thông tin thông số của trang -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add User</h5>
+                </div>
+
+                <!-- phần thân của modal -->
+                <div class="modal-body">
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Fullname</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                    </div>
+
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Username</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                    </div>
+
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Password</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                    </div>
+
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Email</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                    </div>
+
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Group</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                    </div>
+
+                    <!-- sang phần thân nhưng không phải input mà là checkbox -->
+                    <div class="fullhang">
+                        <span class="text">Status :</span>
+                        <div class="checkbox">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                <label class="form-check-label" for="inlineCheckbox1">Thiếu tiền</label>
+                            </div>
+                            <div class="form-check form-check-inline a1">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                <label class="form-check-label" for="inlineCheckbox2">Thiếu người eo</label>
+                            </div>
+                            <div class="form-check form-check-inline a1">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                <label class="form-check-label" for="inlineCheckbox3">Thiếu nhà</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- hết thân modal -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save SinhVien</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- hết modal -->
+
+    <footer class="text-center text-lg-start bg-white text-muted ">
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgb(238, 127, 182);color: black;">
+            © 2023 Tác giả :
+            <a class="text-reset fw-bold" style="text-decoration: none;" href="https://mdbootstrap.com/">HDCongHanh.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+
+    <script src="/bootstrap-5.2.3-dist/js/bootstrap.min.js">
+        var myModal = document.getElementById('myModal')
+        var myInput = document.getElementById('myInput')
+        myModal.addEventListener('shown.bs.modal', function () {
+            myInput.focus()
+        })
+    </script>
+</body>
+
+</html>

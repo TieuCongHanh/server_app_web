@@ -1,0 +1,29 @@
+<%- include('../inc/top.ejs') %>
+
+
+    <h1>đây là trang san pham</h1>
+
+    <table class="table table-bordered table-striped table-hover table-click">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Desc</th>
+            <th>theloai</th>
+        </tr>
+
+        <% listSP.forEach((row) => { %>
+        <tr>
+            <td><a href="sp/edit/<%= row._id %>"><%= row._id %></a></td>
+            
+            <td> <%= row.name %> </td>
+            <td> <%= row.price %> </td>
+            <td> <%= row.description %> </td>
+            <td> <%= row.id_theloai.name %> </td>
+        </tr>
+   <% }); %>
+    </table>
+
+
+
+    <%- include('../inc/bottom.ejs') %>
