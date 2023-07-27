@@ -52,22 +52,34 @@ exports.login= async (req,res,next)=>{
     }
 
 }
-exports.register= async (req, res,next) => {
-    console.log(req.body);
+exports.register = async (req, res, next) => {
+    if (req.method === 'POST') {
+        console.log(req.body);
+        let msg = ''; // Khởi tạo biến msg để chứa thông báo kết quả đăng ký
 
-    try {
-        const salt =await bcrypt.genSalt(10);
-        const user= new md.userModel(req.body);
-        user.password=await bcrypt.hash(req.body.password,salt);
+        // Kiểm tra hợp lệ dữ liệu, ở đây ta giả sử tất cả các trường đều hợp lệ
+        // Bạn có thể thêm kiểm tra hợp lệ dữ liệu ở các trường khác tùy ý
 
+        try {
+            // Tạo đối tượng user từ model và gán giá trị từ req.body
+            const salt = await bcrypt.genSalt(10);
+            let objU = new md.userModel();
+            objU.user = req.body.user;
+            objU.password = await bcrypt.hash(req.body.password, salt);
+            objU.img = req.body.img;
+            objU.email = req.body.email;
+            objU.vaitro = req.body.vaitro;
 
-        let new_u=await user.save();
-        return res.status(201).json({user:new_u});
+            // Lưu thông tin người dùng vào CSDL
+            await objU.save();
+            msg = 'Đăng ký thành công';
+        } catch (error) {
+            msg = error.message; // Nếu có lỗi, gán thông báo lỗi vào biến msg
+        }
 
-        
-    } catch (error) {
-        console.log(error);
-        return res.status(500).json({msg:error.message})
+        res.json({ msg }); // Trả về kết quả thông qua JSON response
+    } else {
+        res.status(405).json({ error: 'Method Not Allowed' });
     }
-}
+};
 
