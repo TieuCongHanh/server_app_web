@@ -84,7 +84,7 @@ exports.edit = async (req, res, next) => {
         let objUser = new myMD.userModel();
         objUser.user = req.body.user;
         objUser.password = req.body.password;
-        objUser.img = req.body.originalname;
+        objUser.img = req.body.img;
         objUser.email = req.body.email;
         objUser.vaitro = req.body.vaitro;
 
@@ -105,12 +105,18 @@ exports.edit = async (req, res, next) => {
 
 // delete
 exports.delete = async (req, res, next) => {
-    await myMD.userModel.deleteOne({
-        _id: req.params.idus
-    });
-    console.log("delete thành công:" + req.params.idus);
-    res.redirect("/user");
-
-}
+    let iduser = req.params.idus;
+    try {
+      const deletedUser = await myMD.userModel.findByIdAndDelete(iduser);
+      if (!deletedUser) {
+        return res.status(404).send('Người dùng không tồn tại');
+      }
+      console.log("Xóa thành công:" + req.params.idus);
+      res.redirect("/user");
+    } catch (err) {
+      console.error(err);
+      res.status(500).send('Lỗi server');
+    }
+  }
 
 
